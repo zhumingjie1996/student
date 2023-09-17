@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥蓝学生管理信息系统（学生版）</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0
+    }
+    body,
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
+    .header{
+        width: 100%;
+        height: 30px;
+        background-color: #7C98D9;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+
+    .header_name{
+        width: 50%;
+        text-align: left;
+        color: #98EA8D;
+    }
+    
+    .header_button{
+        flex: 1;
+        color: #EFCB58;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .content{
+        position: relative;
+        width: 80%;
+        left: 10%;
+        /* background-color: aliceblue; */
+    }
+
+    .photo{
+        width: 70%;
+        margin-left: 15%;
+        text-align: center;
+    }
+
+    .logo{
+        width: 100%;
+        height: 60px;
+        background-image: url(./logo.png);
+        background-size: 100%100%;
+    }
+
+    .text1{
+        display: block;
+        font-weight: bolder;
+        font-size: 22px;
+        letter-spacing: 8px;
+        margin: 5px 0;
+    }
+    .time{
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        color: #42952D;
+    }
+
+    .pic{
+        width: 50%;
+        height: 150px;
+        margin-left: 25%;
+        background-image: url(./4.jpg);
+        background-size: 100%100%;
+    }
+
+    .info{
+        width: calc(100% - 30px);
+        font-size: 22px;
+        font-weight: 400;
+        margin-left: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .infoItem{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .infoItem_value{
+        flex: 1;
+        border-bottom: 1.5px solid #000;
+    }
+</style>
+<script>
+    setInterval(time,1000) //定时器
+
+    function time(){ //定义方法 time
+      let time = new Date();  //实例化日期对象
+      let year=time.getFullYear()+"-" //获取年
+      let month=time.getMonth()+1+"-" //获取月
+      let day=time.getDate()   //获取日
+      let h=time.getHours()+':'        //获取时
+      let m=time.getMinutes()+":"      //获取分
+      let s=time.getSeconds()          //获取秒
+
+      if(s<10){                        //判定秒 是否小于10秒
+         s="0"+time.getSeconds()      //小于是 在其前加0 01，02，03...
+          }
+
+     if(time.getMinutes()<10){        //判定分 是否小于10分
+         m="0"+time.getMinutes()+":"  //小于是 在其前加0 01，02，03...
+         }
+    let id = document.getElementsByClassName('time')[0]
+     id.innerHTML=year+month+day + ' ' +h+m+s  //显示当前时间
+   }
+
+    </script>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header_name">欢迎你:陈蕴怡</div>
+            <div class="header_button">
+                <span>首页</span>
+                <span>电脑版</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="photo">
+                <div class="logo"></div>
+                <span class="text1">学生证</span>
+                <span class="time">0000-0-0 00:00:00</span>
+                <div class="pic"></div>
+            </div>
+            <div class="info">
+                <div class="infoItem">
+                    <span class="infoItem_title">院系:</span>
+                    <span class="infoItem_value">健康与护理学院</span>
+                </div>
+                <div class="infoItem">
+                    <span class="infoItem_title">班级:</span>
+                    <span class="infoItem_value">护理2005</span>
+                </div>
+                <div class="infoItem">
+                    <span class="infoItem_title">学号:</span>
+                    <span class="infoItem_value">202081231</span>
+                </div>
+                <div class="infoItem">
+                    <span class="infoItem_title">姓名:</span>
+                    <span class="infoItem_value">陈蕴怡</span>
+                </div>
+                <div class="infoItem">
+                    <span class="infoItem_title">宿舍:</span>
+                    <span class="infoItem_value">南宿五（3）-310</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
